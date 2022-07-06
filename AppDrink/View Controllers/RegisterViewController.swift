@@ -78,14 +78,16 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
             }
         }
     }
-    //圖片上傳到imgur，在利用回傳讀取圖片網紙
+    //圖片上傳到imgur，在利用回傳讀取圖片網址
     func uploadImage(uiImage: UIImage,nameText:String) {
             let headers: HTTPHeaders = [
                 "Authorization": "Client-ID 3e943d291f594f7",
             ]
             AF.upload(multipartFormData: { data in
-                let imageData = uiImage.jpegData(compressionQuality: 0.9)
-                data.append(imageData!, withName: "image")
+                if let imageData = uiImage.jpegData(compressionQuality: 0.9){
+                    data.append(imageData, withName: "image")
+                }
+                
             }, to: "https://api.imgur.com/3/image", headers: headers).responseDecodable(of: ImgurImageResponse.self, queue: .main, decoder: JSONDecoder()) { response in
                 switch response.result {
                 case .success(let result):
@@ -174,6 +176,20 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     }
     //PHPickerViewControllerDelegate
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+//        picker.dismiss(animated: true)
+//
+//        let itemProviders = results.map(\.itemProvider)
+//        if let itemProvider = itemProviders.first, itemProvider.canLoadObject(ofClass: UIImage.self) {
+//            let previousImage = self.userImage.image
+//            itemProvider.loadObject(ofClass: UIImage.self) {[weak self] (image, error) in
+//                DispatchQueue.main.async {
+//                    guard let self = self, let image = image as? UIImage,self.userImage.image == previousImage else { return }
+//                    self.userImage.image = image
+//                    self.previewImage = image
+//                }
+//            }
+//        }
         let itemProviders = results.map(\.itemProvider)
         if let itemProvider = itemProviders.first,itemProvider.canLoadObject(ofClass: UIImage.self){
             itemProvider.loadObject(ofClass: UIImage.self) { image, error in

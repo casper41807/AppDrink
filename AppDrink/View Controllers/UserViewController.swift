@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseAuth
+import FacebookLogin
+import GoogleSignIn
 
 
 class UserViewController: UIViewController {
@@ -17,49 +19,93 @@ class UserViewController: UIViewController {
     
     @IBOutlet weak var fbOutlet: UIButton!
     
+    @IBOutlet weak var google: GIDSignInButton!
+    
+    let signInConfig = GIDConfiguration(clientID: "32669712464-qt5s65agc1ppl0njfuf7arpgsedalss2.apps.googleusercontent.com")
+    
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
+        //只提供白天模式
         overrideUserInterfaceStyle = .light
+        
         emailTextField.text = ""
         passwordTextField.text = ""
+        //Firebase登出
         do{
             try Auth.auth().signOut()
         }catch{
             print(error)
         }
+        //fb登出
+        let manager = LoginManager()
+        manager.logOut()
+        
+       
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //google登出
+        GIDSignIn.sharedInstance.signOut()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.backButtonTitle = "登出"
-        fbOutlet.layer.cornerRadius = 20
+//        fbOutlet.layer.cornerRadius = 20
         
+       
         
+        //確認用戶在Firebase是否登入過
         if let user = Auth.auth().currentUser {
             print("\(user.uid) login")
-            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "DrinkTableViewController"){
+            if let controller = storyboard?.instantiateViewController(withIdentifier: "DrinkTableViewController"){
                 self.navigationController?.pushViewController(controller, animated: true)
                 dataForOrderPost.orderName = user.displayName ?? "error"
             }
         } else {
-            print("not login")
+            print("Firebase not login")
+        }
+        //確認用戶在Facebook是否登入過
+        if let accessToken = AccessToken.current,!accessToken.isExpired {
+            print("\(accessToken.userID) login")
+            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "DrinkTableViewController"){
+                Profile.loadCurrentProfile { profile, error in
+                        if let profile = profile {
+                            print(profile.name ?? "fb沒名字")
+                            dataForOrderPost.orderName = profile.name ?? "fb沒名字"
+                        }
+                }
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+        } else {
+            print("Fb not login")
         }
         
-        
+//        Fb提供登入按鈕
 //        let loginButton = FBLoginButton()
 //                loginButton.center = view.center
 //                view.addSubview(loginButton)
         
+        //確認用戶在google是否登入過
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+           if error != nil || user == nil {
+               print("google not login")
+           } else {
+               if let controller = self.storyboard?.instantiateViewController(withIdentifier: "DrinkTableViewController"),let fullName = user?.profile?.name{
+                   dataForOrderPost.orderName = fullName
+                   self.navigationController?.pushViewController(controller, animated: true)
+               }
+           }
+         }
         
         
-//        if let accessToken = AccessToken.current {
-//                   print("\(accessToken.userID) login")
-//               } else {
-//                   print("not login")
-//               }
+        
+        
     }
+    
     //點return收鍵盤
     @IBAction func dissMissKB(_ sender: Any) {
     }
@@ -68,25 +114,79 @@ class UserViewController: UIViewController {
             view.endEditing(true)
         }
     
-    
+    //fb登入按鈕
     @IBAction func fbButton(_ sender: UIButton) {
-//        let manager = LoginManager()
-//              manager.logIn { (result) in
-//                 if case LoginResult.success(granted: _, declined: _, token: _) = result {
-//                        print("login ok")
-//                    } else {
-//                        print("login fail")
-//                    }
-//              }
-//        let manager = LoginManager()
-//        manager.logIn(permissions: [.publicProfile, .email]) { (result) in
-//              if case LoginResult.success(granted: _, declined: _, token: _) = result {
-//                  print("login ok")
-//              } else {
-//                  print("login fail")
-//              }
-//        }
+        let manager = LoginManager()
+        manager.logIn { result in
+            switch result {
+            case .success(granted: _, declined: _, token: _):
+                print("success")
+                if let controller = self.storyboard?.instantiateViewController(withIdentifier: "DrinkTableViewController"),let _ =  AccessToken.current  {
+                    Profile.loadCurrentProfile { profile, error in
+                            if let profile = profile {
+                                print(profile.name ?? "fb沒名字")
+                                dataForOrderPost.orderName = profile.name ?? "fb沒名字"
+                            }
+                    }
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
+            case .cancelled:
+                print("cancelled")
+            case .failed(_):
+                print("failed")
+            }
+        }
+//        login()
     }
+    //利用Firebase結合Fb登入寫法
+//    func login() {
+//            let manager = LoginManager()
+//            manager.logIn(permissions: [.publicProfile], viewController: self) { (result) in
+//                if case LoginResult.success(granted: _, declined: _, token: let token) = result {
+//                    print("fb login ok")
+//
+//                    let credential =  FacebookAuthProvider.credential(withAccessToken: token!.tokenString)
+//                        Auth.auth().signIn(with: credential) { [weak self] (result, error) in
+//                        guard let self = self else { return }
+//                        guard error == nil else {
+//                            print(error?.localizedDescription)
+//                            return
+//                        }
+//                        print("login ok")
+//                        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "DrinkTableViewController"),let _ =  AccessToken.current  {
+//                                Profile.loadCurrentProfile { profile, error in
+//                                        if let profile = profile {
+//                                            print(profile.name ?? "fb沒名字")
+//                                            dataForOrderPost.orderName = profile.name ?? "fb沒名字"
+//                                        }
+//                                }
+//                                self.navigationController?.pushViewController(controller, animated: true)
+//                        }
+//                    }
+//
+//                } else {
+//                    print("login fail")
+//                }
+//            }
+//    }
+    
+    //google登入按鈕
+    @IBAction func googleLogIn(_ sender: GIDSignInButton) {
+        
+        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+            guard error == nil else { return }
+            guard let user = user else { return }
+
+            if let fullName = user.profile?.name{
+                dataForOrderPost.orderName = fullName
+            }
+            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "DrinkTableViewController"){
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+         }
+    }
+    
+    
     
     @IBAction func registerButton(_ sender: UIButton) {
         navigationItem.backButtonTitle = "返回"

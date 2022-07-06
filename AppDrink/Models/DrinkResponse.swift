@@ -28,22 +28,22 @@ struct DrinkMenu:Codable{
 
 //定義order資料 AirTable Get＆Post 上傳、回傳型別
 struct DrinkOrder:Codable{
-    var records:[Records]
+    let records:[Records]
     
     struct Records:Codable{
-        var id:String?
-        var fields:Fields
+        let id:String?
+        let fields:Fields
         
         struct Fields:Codable{
-            var orderName:String
-            var drinkName:String
-            var mikeCap:String
-            var drinkSuger:String
-            var drinkIce:String
-            var add:String?
-            var total:Int
-            var cups:Int
-            var pic:URL?
+            let orderName:String
+            let drinkName:String
+            let mikeCap:String
+            let drinkSuger:String
+            let drinkIce:String
+            let add:String?
+            let total:Int
+            let cups:Int
+            let pic:URL?
         }
     }
 }

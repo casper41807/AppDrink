@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		22279B5A2836425E0081BD47 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 22279B592836425E0081BD47 /* Kingfisher */; };
-		22279B5C2836444D0081BD47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22279B5B2836444C0081BD47 /* GoogleService-Info.plist */; };
 		22279B5F283645050081BD47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 22279B5E283645050081BD47 /* FirebaseAuth */; };
 		22279B61283645050081BD47 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 22279B60283645050081BD47 /* FirebaseFirestoreSwift */; };
 		22279B63283645050081BD47 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 22279B62283645050081BD47 /* FirebaseStorage */; };
@@ -26,15 +25,16 @@
 		22279B852836482A0081BD47 /* OrderListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22279B802836482A0081BD47 /* OrderListCollectionViewCell.swift */; };
 		22279B862836482A0081BD47 /* headerForMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22279B812836482A0081BD47 /* headerForMenu.swift */; };
 		22279B872836482A0081BD47 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22279B822836482A0081BD47 /* DrinkTableViewCell.swift */; };
+		22279B8F283763D30081BD47 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 22279B8E283763D30081BD47 /* FacebookLogin */; };
+		22279B922838AB8B0081BD47 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 22279B912838AB8B0081BD47 /* GoogleSignIn */; };
+		22279BA32838FF930081BD47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22279BA22838FF930081BD47 /* GoogleService-Info.plist */; };
 		22A3FAEB28363DFC00D5E073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A3FAEA28363DFC00D5E073 /* AppDelegate.swift */; };
 		22A3FAED28363DFC00D5E073 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A3FAEC28363DFC00D5E073 /* SceneDelegate.swift */; };
-		22A3FAEF28363DFC00D5E073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A3FAEE28363DFC00D5E073 /* ViewController.swift */; };
 		22A3FAF428363DFD00D5E073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A3FAF328363DFD00D5E073 /* Assets.xcassets */; };
 		22A3FAF728363DFD00D5E073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22A3FAF528363DFD00D5E073 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22279B5B2836444C0081BD47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22279B67283646A00081BD47 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		22279B6E283648220081BD47 /* DrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewController.swift; sourceTree = "<group>"; };
 		22279B6F283648220081BD47 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
@@ -49,10 +49,11 @@
 		22279B812836482A0081BD47 /* headerForMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headerForMenu.swift; sourceTree = "<group>"; };
 		22279B822836482A0081BD47 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		22279B8A283649330081BD47 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22279B8C28375F270081BD47 /* AppDrink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppDrink.entitlements; sourceTree = "<group>"; };
+		22279BA22838FF930081BD47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22A3FAE728363DFC00D5E073 /* AppDrink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDrink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A3FAEA28363DFC00D5E073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22A3FAEC28363DFC00D5E073 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		22A3FAEE28363DFC00D5E073 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22A3FAF328363DFD00D5E073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22A3FAF628363DFD00D5E073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,9 +65,11 @@
 			files = (
 				22279B66283645840081BD47 /* Alamofire in Frameworks */,
 				22279B5A2836425E0081BD47 /* Kingfisher in Frameworks */,
+				22279B8F283763D30081BD47 /* FacebookLogin in Frameworks */,
 				22279B63283645050081BD47 /* FirebaseStorage in Frameworks */,
 				22279B5F283645050081BD47 /* FirebaseAuth in Frameworks */,
 				22279B61283645050081BD47 /* FirebaseFirestoreSwift in Frameworks */,
+				22279B922838AB8B0081BD47 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,11 +79,11 @@
 		22279B6D283648220081BD47 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				22279B70283648220081BD47 /* UserViewController.swift */,
+				22279B72283648220081BD47 /* RegisterViewController.swift */,
 				22279B6E283648220081BD47 /* DrinkTableViewController.swift */,
 				22279B6F283648220081BD47 /* DetailTableViewController.swift */,
-				22279B70283648220081BD47 /* UserViewController.swift */,
 				22279B71283648220081BD47 /* OrderListViewController.swift */,
-				22279B72283648220081BD47 /* RegisterViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -106,11 +109,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		22279B932838AC180081BD47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22A3FAE828363DFC00D5E073 /* Products */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		22A3FADE28363DFC00D5E073 = {
 			isa = PBXGroup;
 			children = (
 				22A3FAE928363DFC00D5E073 /* AppDrink */,
-				22A3FAE828363DFC00D5E073 /* Products */,
+				22279B932838AC180081BD47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,17 +136,17 @@
 		22A3FAE928363DFC00D5E073 /* AppDrink */ = {
 			isa = PBXGroup;
 			children = (
+				22279B8C28375F270081BD47 /* AppDrink.entitlements */,
 				22279B7D2836482A0081BD47 /* Views */,
 				22279B78283648270081BD47 /* Models */,
 				22279B6D283648220081BD47 /* View Controllers */,
 				22A3FAEA28363DFC00D5E073 /* AppDelegate.swift */,
 				22A3FAEC28363DFC00D5E073 /* SceneDelegate.swift */,
-				22A3FAEE28363DFC00D5E073 /* ViewController.swift */,
 				22A3FAF328363DFD00D5E073 /* Assets.xcassets */,
 				22279B67283646A00081BD47 /* Main.storyboard */,
 				22A3FAF528363DFD00D5E073 /* LaunchScreen.storyboard */,
 				22279B8A283649330081BD47 /* Info.plist */,
-				22279B5B2836444C0081BD47 /* GoogleService-Info.plist */,
+				22279BA22838FF930081BD47 /* GoogleService-Info.plist */,
 			);
 			path = AppDrink;
 			sourceTree = "<group>";
@@ -162,6 +173,8 @@
 				22279B60283645050081BD47 /* FirebaseFirestoreSwift */,
 				22279B62283645050081BD47 /* FirebaseStorage */,
 				22279B65283645840081BD47 /* Alamofire */,
+				22279B8E283763D30081BD47 /* FacebookLogin */,
+				22279B912838AB8B0081BD47 /* GoogleSignIn */,
 			);
 			productName = AppDrink;
 			productReference = 22A3FAE728363DFC00D5E073 /* AppDrink.app */;
@@ -195,6 +208,8 @@
 				22279B582836425E0081BD47 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				22279B5D283645050081BD47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				22279B64283645840081BD47 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				22279B8D283763D30081BD47 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				22279B902838AB8B0081BD47 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 22A3FAE828363DFC00D5E073 /* Products */;
 			projectDirPath = "";
@@ -211,7 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22A3FAF728363DFD00D5E073 /* LaunchScreen.storyboard in Resources */,
-				22279B5C2836444D0081BD47 /* GoogleService-Info.plist in Resources */,
+				22279BA32838FF930081BD47 /* GoogleService-Info.plist in Resources */,
 				22A3FAF428363DFD00D5E073 /* Assets.xcassets in Resources */,
 				22279B68283646A00081BD47 /* Main.storyboard in Resources */,
 			);
@@ -234,7 +249,6 @@
 				22279B77283648220081BD47 /* RegisterViewController.swift in Sources */,
 				22279B842836482A0081BD47 /* OrderListTableViewCell.swift in Sources */,
 				22279B76283648220081BD47 /* OrderListViewController.swift in Sources */,
-				22A3FAEF28363DFC00D5E073 /* ViewController.swift in Sources */,
 				22A3FAEB28363DFC00D5E073 /* AppDelegate.swift in Sources */,
 				22A3FAED28363DFC00D5E073 /* SceneDelegate.swift in Sources */,
 				22279B832836482A0081BD47 /* DetailTableViewCell.swift in Sources */,
@@ -375,16 +389,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AppDrink/AppDrink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B6P696Q79U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppDrink/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "是否同意使用相機功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -403,16 +420,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AppDrink/AppDrink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B6P696Q79U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppDrink/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "是否同意使用相機功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,6 +494,22 @@
 				kind = branch;
 			};
 		};
+		22279B8D283763D30081BD47 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		22279B902838AB8B0081BD47 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -501,6 +537,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 22279B64283645840081BD47 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		22279B8E283763D30081BD47 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22279B8D283763D30081BD47 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		22279B912838AB8B0081BD47 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22279B902838AB8B0081BD47 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

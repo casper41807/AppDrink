@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class DrinkTableViewController: UITableViewController {
     
@@ -18,7 +19,8 @@ class DrinkTableViewController: UITableViewController {
     var total = [[DrinkMenu.Records]]()
     var category = ["果然好韻","好韻那堤","在地好韻","好韻特調","醇韻奶香"]
     
-   
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,8 @@ class DrinkTableViewController: UITableViewController {
         
        title = "Menu"
         print(dataForOrderPost.orderName)
+        
+        
     }
    
     
@@ -95,6 +99,7 @@ class DrinkTableViewController: UITableViewController {
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
+                        print(total[0][0].fields.price)
                     }catch{
                         print(error)
                     }
@@ -144,6 +149,7 @@ class DrinkTableViewController: UITableViewController {
         
         
         cell.nameLabel.text = "\(index.fields.name)"
+        
         cell.priceLabel.text = "\(index.fields.price)"
         if index.fields.mikeCapPrice == nil{
             cell.mikeCapLabel.text = "無"
@@ -183,6 +189,10 @@ class DrinkTableViewController: UITableViewController {
         default:
             header.textLabel?.textColor = UIColor(red: 212/255, green: 152/255, blue: 95/255, alpha: 1)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     /*
     // Override to support conditional editing of the table view.

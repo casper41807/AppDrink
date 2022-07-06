@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FacebookLogin
 
 class DetailTableViewController: UITableViewController {
 
@@ -83,6 +84,7 @@ class DetailTableViewController: UITableViewController {
         footerView.trailingAnchor.constraint(equalTo: tableView.frameLayoutGuide.trailingAnchor).isActive = true
         footerView.bottomAnchor.constraint(equalTo: tableView.frameLayoutGuide.bottomAnchor).isActive = true
         
+        
 //        dataForOrderPost.orderName = "casper"
         
     }
@@ -104,6 +106,23 @@ class DetailTableViewController: UITableViewController {
         }
         if addStr != ""{
             addStr.removeLast()
+        }
+        
+        //Firebase獲取用戶圖片網址
+        if let user = Auth.auth().currentUser {
+            pic = user.photoURL
+            print(user.photoURL ?? "Firebase用戶沒圖片" )
+        }
+        //Fb獲取用戶圖片網址
+        if let _ = AccessToken.current {
+            Profile.loadCurrentProfile { profile, error in
+                if let profile = profile {
+                    self.pic = profile.imageURL(forMode: .square, size: CGSize(width: 100, height: 100))
+                    print(profile.imageURL ?? "fb用戶沒圖片")
+                }
+            }
+        }else{
+            print("沒下載到fb使用者圖片")
         }
         
         if dataForOrderPost.mikeCap == ""{
@@ -129,11 +148,7 @@ class DetailTableViewController: UITableViewController {
     
     //上傳訂單資料
     func orderPost(){
-        //Firebase獲取用戶圖片網址
-        if let user = Auth.auth().currentUser {
-            pic = user.photoURL
-            print("\(String(describing: user.photoURL))123")
-        }
+       
         //總金額乘上杯數
         let totalMoney = (mikeCapMoney + addMoney)*Int(stepperOutlet.value)
         

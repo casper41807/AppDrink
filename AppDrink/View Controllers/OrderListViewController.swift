@@ -126,7 +126,7 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
             request.httpMethod = "DELETE"
             URLSession.shared.dataTask(with: request) { data, response, error in
                 if error == nil{
-                    print("成功")
+                    print("刪除訂單成功")
                 }else{
                     print(error ?? "失敗")
                 }

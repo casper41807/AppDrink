@@ -9,20 +9,28 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb275153231409659</string>
+				<string>fb417126187089464</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.32669712464-qt5s65agc1ppl0njfuf7arpgsedalss2</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>275153231409659</string>
+	<string>417126187089464</string>
+	<key>FacebookClientToken</key>
+	<string>55a37d796cdbc679a4959cfc57e96a2c</string>
 	<key>FacebookDisplayName</key>
-	<string>AppLogIn</string>
+	<string>AppDrink</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
-		<string>fb-messenger-share-api</string>
-		<string>fbauth2</string>
-		<string>fbshareextension</string>
+		<string>fb-messenger-share-api </string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
@@ -32,8 +40,6 @@
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UIApplicationSupportsTabbedSceneCollection</key>
 		<false/>
 		<key>UISceneConfigurations</key>
 		<dict>

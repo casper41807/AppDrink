@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>192068867189-mnui7scqrhmla5ef9scvbtf4l066a9vs.apps.googleusercontent.com</string>
+	<string>32669712464-qt5s65agc1ppl0njfuf7arpgsedalss2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.192068867189-mnui7scqrhmla5ef9scvbtf4l066a9vs</string>
+	<string>com.googleusercontent.apps.32669712464-qt5s65agc1ppl0njfuf7arpgsedalss2</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCOFGG9EgCC1_AJgeiZw13XyU5B9XYEcNs</string>
+	<string>AIzaSyBoyIPtvPOLdhv-imj_ILJP6QHyOkDEWUQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>192068867189</string>
+	<string>32669712464</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>casper.com.DrinkApp</string>
+	<string>casper.com.AppDrink</string>
 	<key>PROJECT_ID</key>
-	<string>drinkapp-1e254</string>
+	<string>appdrink-140d1</string>
 	<key>STORAGE_BUCKET</key>
-	<string>drinkapp-1e254.appspot.com</string>
+	<string>appdrink-140d1.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:192068867189:ios:6860dda11752f3a016943c</string>
+	<string>1:32669712464:ios:bf9a059b01fa128d8a5155</string>
 </dict>
 </plist>
